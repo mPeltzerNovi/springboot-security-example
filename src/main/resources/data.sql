@@ -10,7 +10,11 @@ kunnen niet door eindgebruikers, moderators of admins toegevoegd worden. Alleen 
 toevoegen. Daarom is er ook geen Service & repo voor de user-rollen geprogrammeerd. De enige manier om dan iets in de
 database te krijgen is via SQL statements in dit bestand.
 
+Er in fase 2 uitgehaald:
+INSERT INTO role(name) VALUES('ROLE_MODERATOR');
+
+
  */
 INSERT INTO role(name) VALUES('ROLE_USER');
-INSERT INTO role(name) VALUES('ROLE_MODERATOR');
+
 INSERT INTO role(name) VALUES('ROLE_ADMIN');
