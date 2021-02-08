@@ -1,4 +1,4 @@
-/*package nl.novi.stuivenberg.springboot.example.security.repository;
+package nl.novi.stuivenberg.springboot.example.security.repository;
 
 //Specifieke import
 import nl.novi.stuivenberg.springboot.example.security.domain.Residence;
@@ -14,5 +14,6 @@ import java.util.List;
 public interface ResidenceRepository extends JpaRepository<Residence, Long> {
 
     Residence findByLastNameIgnoreCase(String lastName);
-    Residence findByResidenceNr(long residenceNr);
-}*/
+    //Residence findByResidenceNr(long residenceNr);
+    //Door R 17 liep het vast. Dit nu uit gecommentarieerd.
+}

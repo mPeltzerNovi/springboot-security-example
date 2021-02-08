@@ -1,4 +1,4 @@
-/*
+
 package nl.novi.stuivenberg.springboot.example.security.controller;
 
 //De imports die je specifiek moet maken
@@ -58,4 +58,4 @@ public class ResidenceController {
         return new ResponseEntity<>(residence, HttpStatus.OK);
     }
 }
-*/
+

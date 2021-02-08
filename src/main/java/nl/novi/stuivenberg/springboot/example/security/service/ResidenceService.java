@@ -1,4 +1,4 @@
-/*package nl.novi.stuivenberg.springboot.example.security.service;
+package nl.novi.stuivenberg.springboot.example.security.service;
 
 //specifieke import
 import nl.novi.stuivenberg.springboot.example.security.domain.Residence;
@@ -22,4 +22,4 @@ public interface ResidenceService {
     //Extra dingen
 
     Residence getResidenceByLastName(String lastName);
-}*/
+}

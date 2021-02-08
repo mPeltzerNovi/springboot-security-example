@@ -1,4 +1,3 @@
-/*
 package nl.novi.stuivenberg.springboot.example.security.service;
 
 //Specifieke imports
@@ -105,4 +104,6 @@ public class ResidenceServiceImpl implements ResidenceService {
         }
     }
 }
-*/
+
+
+

@@ -1,4 +1,4 @@
-/*package nl.novi.stuivenberg.springboot.example.security.controller;
+package nl.novi.stuivenberg.springboot.example.security.controller;
 
 //Geen op maat gemaakte imports hier
 import org.springframework.boot.SpringApplication;
@@ -14,4 +14,4 @@ public class MainController {
     public ResponseEntity<Object> getCustomers() {
         return new ResponseEntity<>("Hello from demo_spring_jpa", HttpStatus.OK);
     }
-}*/
+}

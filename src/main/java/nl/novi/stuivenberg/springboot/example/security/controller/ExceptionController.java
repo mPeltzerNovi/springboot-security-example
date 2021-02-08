@@ -1,4 +1,4 @@
-/*package nl.novi.stuivenberg.springboot.example.security.controller;
+package nl.novi.stuivenberg.springboot.example.security.controller;
 
 //op maat gemaakte imports
 import nl.novi.stuivenberg.springboot.example.security.exception.DatabaseErrorException;
@@ -24,4 +24,4 @@ public class ExceptionController {
     public ResponseEntity<Object> exception(DatabaseErrorException exception) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
-}*/
+}
