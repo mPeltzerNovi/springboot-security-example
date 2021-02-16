@@ -1,4 +1,3 @@
-
 package nl.novi.stuivenberg.springboot.example.security.controller;
 
 //De imports die je specifiek moet maken

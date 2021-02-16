@@ -40,6 +40,9 @@ public class User {
 
     public User() {
 
+        //Zie extra backendles van 11 feb met Moira voor begin one to many etc koppeling maken!!!
+        //Ze praten ook over overerving.
+
     }
 
     public User(String username, String email, String password) {
