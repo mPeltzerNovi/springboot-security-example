@@ -70,6 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 //Fase3:
                 .antMatchers("/bookings/**").permitAll()
+                .antMatchers("/messages/**").permitAll()
                 .antMatchers("/residences/**").permitAll()
                 //
                 .anyRequest().authenticated();

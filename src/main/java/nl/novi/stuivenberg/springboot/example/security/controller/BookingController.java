@@ -6,8 +6,6 @@ package nl.novi.stuivenberg.springboot.example.security.controller;
 import nl.novi.stuivenberg.springboot.example.security.domain.Booking;
 import nl.novi.stuivenberg.springboot.example.security.service.BookingService;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
