@@ -19,6 +19,20 @@ public class Booking {
     @Column(name = "comment")
     private String comment;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    //Toevoeging 18feb voor koppelen aan user
+    //Een booking kan maar 1 user hebben, een user kan meerdere bookings hebben
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public long getId() {
         return id;
     }

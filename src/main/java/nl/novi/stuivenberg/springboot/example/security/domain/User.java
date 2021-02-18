@@ -1,21 +1,15 @@
 package nl.novi.stuivenberg.springboot.example.security.domain;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "app_user")
-public class User {
+public class User  {
 
     @Id
     @GeneratedValue(
@@ -38,10 +32,13 @@ public class User {
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+    //Toevoeging 18 feb user aan booking koppelen:
+    //Een user kan meerdere bookings hebben; een booking kan maar een user hebben
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Booking> booking;
+
     public User() {
 
-        //Zie extra backendles van 11 feb met Moira voor begin one to many etc koppeling maken!!!
-        //Ze praten ook over overerving.
 
     }
 
