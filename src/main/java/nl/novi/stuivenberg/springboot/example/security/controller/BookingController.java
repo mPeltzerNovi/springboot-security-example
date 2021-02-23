@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:3000")
+//Bovenstaand kan je waarschijnlijk terugveranderen in dat sterretje verhaal.
 //@RestController toegevoegd
 @RestController
 public class BookingController {
@@ -49,7 +50,7 @@ public class BookingController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); //dit is de foutcode die hij geeft als het niet lukt
 
     }
-    //Hier is nieuwe code toegevoegd met hulp van Frank
+    //Hier is nieuwe code toegevoegd met hulp van Frank 18 feb 20
     @PostMapping(value = "/bookings")
     public ResponseEntity<Object> saveBooking(@RequestBody Booking booking, @AuthenticationPrincipal Authentication authentication) {
 
