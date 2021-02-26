@@ -19,6 +19,21 @@ public class Booking {
     @Column(name = "comment")
     private String comment;
 
+    //Toevoeging voor image
+    @Column( length = 2000000)
+    private String baseImage;
+
+    //getters en setters erbij!
+
+
+    public String getBaseImage() {
+        return baseImage;
+    }
+
+    public void setBaseImage(String baseImage) {
+        this.baseImage = baseImage;
+    }
+
     public User getUser() {
         return user;
     }

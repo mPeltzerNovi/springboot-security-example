@@ -66,6 +66,8 @@ public class BookingServiceImpl implements BookingService {
                 existingBooking.setArrival(booking.getArrival());
                 existingBooking.setDeparture(booking.getDeparture());
                 existingBooking.setComment(booking.getComment());
+                //voor baseImage
+                existingBooking.setBaseImage(booking.getBaseImage());
                 bookingRepository.save(existingBooking);
             }
             catch (Exception ex) {

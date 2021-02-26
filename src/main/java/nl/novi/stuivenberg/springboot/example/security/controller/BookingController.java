@@ -50,7 +50,7 @@ public class BookingController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); //dit is de foutcode die hij geeft als het niet lukt
 
     }
-    //Hier is nieuwe code toegevoegd met hulp van Frank 18 feb 20
+    //Hier is nieuwe code toegevoegd met hulp van Frank 18 feb 20!!!!!
     @PostMapping(value = "/bookings")
     public ResponseEntity<Object> saveBooking(@RequestBody Booking booking, @AuthenticationPrincipal Authentication authentication) {
 
