@@ -8,12 +8,31 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+//Deze ook, ongebruikt in booking
+import nl.novi.stuivenberg.springboot.example.security.service.UserDetailsImpl;
+import nl.novi.stuivenberg.springboot.example.security.service.UserService;
+
+//Toevoeging zoals in bookings
+import nl.novi.stuivenberg.springboot.example.security.domain.User;
+import nl.novi.stuivenberg.springboot.example.security.repository.UserRepository;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Optional;
+
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class MessageController {
     @Autowired
     private MessageService messageService;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping(value = "/messages")
     public ResponseEntity<Object> getMessages() {
@@ -35,11 +54,19 @@ public class MessageController {
 
     }
 
+    //Deze moet aangepast worden met de code van Frank!!!!
     @PostMapping(value = "/messages")
-    public ResponseEntity<Object> saveMessage(@RequestBody Message message) {
+    public ResponseEntity<Object> saveMessage(@RequestBody Message message, @AuthenticationPrincipal Authentication authentication) {
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        Optional<User> userOptional = userRepository.findByUsername(userDetails.getUsername());
+        if(userOptional.isPresent()){
+            message.setUser(userOptional.get());
+        }
+        //dit kon blijven staan
         long newId = messageService.saveMessage(message);
         return new ResponseEntity<>(newId, HttpStatus.CREATED);
     }
+    //Het rood van ".setUser" ging weg na aanmaken getters en setters van "User" in "Message"
 
     @PutMapping(value = "/messages/{id}")
     public ResponseEntity<Object> updateMessage(@PathVariable("id") int id, @RequestBody Message message) {

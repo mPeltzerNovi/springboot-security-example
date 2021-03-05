@@ -68,11 +68,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //Nieuw
                 //Toegevoegd fase2:
                 .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/moderator/**").hasRole("MODERATOR")
+                //Boven toegevoegd
                 //Fase3:
                 .antMatchers("/bookings/**").permitAll()
                 .antMatchers("/messages/**").permitAll()
                 .antMatchers("/residences/**").permitAll()
                 //
+
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

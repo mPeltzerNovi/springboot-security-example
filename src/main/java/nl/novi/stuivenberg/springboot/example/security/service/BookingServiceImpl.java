@@ -16,6 +16,8 @@ import java.util.List;
 
 
 
+
+
 @Service
 public class BookingServiceImpl implements BookingService {
 
@@ -28,6 +30,7 @@ public class BookingServiceImpl implements BookingService {
         return bookingRepository.findAll();
     }
 
+
     @Override
     public Booking getBookingById(long id) {
         if(bookingRepository.existsById(id)) {
@@ -37,6 +40,7 @@ public class BookingServiceImpl implements BookingService {
             throw new RecordNotFoundException();
         }
     }
+
 
     @Override
     public void deleteBooking(long id) { //deleteClient gaat dus praten met de clientRepository

@@ -1,6 +1,7 @@
 package nl.novi.stuivenberg.springboot.example.security.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "booking")
@@ -23,7 +24,24 @@ public class Booking {
     @Column( length = 2000000)
     private String baseImage;
 
+    //1maart -->fout
+    //@OneToMany(fetch = FetchType.LAZY)
+    //private List<User> user;
+
     //getters en setters erbij!
+
+    public Booking(){
+
+    }
+
+    //Dit is er bij gekomen
+    /*public Booking(String arrival, String departure, String comment, String baseImage) {
+        this.arrival = arrival;
+        this.departure = departure;
+        this.comment = comment;
+        this.baseImage = baseImage;
+    }*/
+    //Einde dit is erbij gekomen
 
 
     public String getBaseImage() {

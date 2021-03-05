@@ -34,8 +34,15 @@ public class User  {
 
     //Toevoeging 18 feb user aan booking koppelen:
     //Een user kan meerdere bookings hebben; een booking kan maar een user hebben
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY) //(mappedBy = "user_id") -->01:15:41 -->Hij haalt het weg bij 01:19:05
+    @JoinColumn(name = "booking_id")
     private List<Booking> booking;
+
+
+    //Verhaal voor de message
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "message_id")
+    private List<Message> message;
 
     public User() {
 
