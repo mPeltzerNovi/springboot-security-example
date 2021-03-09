@@ -16,16 +16,14 @@ import java.util.List;
 //Meer Nick imports
 
 
-
-
 @Service
 public class ResidenceServiceImpl implements ResidenceService {
 
     @Autowired
     ResidenceRepository residenceRepository;
 
-    @Override
 
+    @Override
     public List<Residence> getAllResidences() {
         return residenceRepository.findAll();
     }
@@ -68,6 +66,8 @@ public class ResidenceServiceImpl implements ResidenceService {
                 existingResidence.setFirstName(residence.getFirstName());
                 existingResidence.setLastName(residence.getLastName());
                 existingResidence.setClientNr(residence.getClientNr());
+                //AvatarImage er tussen
+                existingResidence.setAvatarImage(residence.getAvatarImage());
                 residenceRepository.save(existingResidence);
             }
             catch (Exception ex) {

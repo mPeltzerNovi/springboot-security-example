@@ -47,6 +47,7 @@ public class MessageController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
+    //Mogelijk later net zo aanpassen als in @PostMapping
     @DeleteMapping(value = "/messages/{id}")
     public ResponseEntity<Object> deleteMessage(@PathVariable("id") long id) {
         messageService.deleteMessage(id);
@@ -74,6 +75,8 @@ public class MessageController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    //Het zou kunnen dat er zoals @postmapping data moet worden toegevoegd voor het renderen op de frondend
+    //Nog eens specifiek op zoeken
     @GetMapping(value = "/messages/clientname/{clientname}")
     public ResponseEntity<Object> getMessageByClientName(@PathVariable("clientname") String clientName) {
         Message message = messageService.getMessageByClientName(clientName);

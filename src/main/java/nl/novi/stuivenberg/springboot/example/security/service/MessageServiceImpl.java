@@ -59,6 +59,8 @@ public class MessageServiceImpl implements MessageService {
                 existingMessage.setClientImage(message.getClientImage());
                 existingMessage.setClientName(message.getClientName());
                 existingMessage.setClientText(message.getClientText());
+                //Wat raar voor de immage zat hij er niet bij; nu erbij gezt
+                existingMessage.setContestImage(message.getContestImage());
                 messageRepository.save(existingMessage);
             }
             catch (Exception ex) {

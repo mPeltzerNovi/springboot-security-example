@@ -2,6 +2,7 @@ package nl.novi.stuivenberg.springboot.example.security.repository;
 
 //Specifieke import
 import nl.novi.stuivenberg.springboot.example.security.domain.Residence;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 //Niet specifieke imports
 import org.springframework.data.jpa.repository.JpaRepository;

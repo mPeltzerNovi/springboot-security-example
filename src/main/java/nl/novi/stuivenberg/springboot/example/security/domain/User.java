@@ -38,11 +38,15 @@ public class User  {
     @JoinColumn(name = "booking_id")
     private List<Booking> booking;
 
-
     //Verhaal voor de message
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "message_id")
     private List<Message> message;
+
+    //Verhaal voor de residence toegevoegd (9maart21)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "residence_id")
+    private List<Residence> residence;
 
     public User() {
 
