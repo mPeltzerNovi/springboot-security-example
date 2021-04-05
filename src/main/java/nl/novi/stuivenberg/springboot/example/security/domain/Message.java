@@ -12,10 +12,10 @@ public class Message {
     private long id;
 
     @Column(name = "client_image")
-    private String clientImage;
+    private String clientImage; //deze verwijderen
 
     @Column(name = "client_name")
-    private String clientName;  //Hier zit je waarschijnlijk lastname vs lastName
+    private String clientName;  //Hier zit je waarschijnlijk lastname vs lastName // veranderen in location
 
     @Column(name = "client_text")
     private String clientText;

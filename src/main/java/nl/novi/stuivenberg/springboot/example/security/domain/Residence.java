@@ -3,6 +3,9 @@ package nl.novi.stuivenberg.springboot.example.security.domain;
 import javax.persistence.*;
 import java.util.List; //-->Ongebruikt in Booking
 
+
+//Deze veranderen naar AvatarUpload en kolommen verwijderen!!!
+
 @Entity
 @Table(name = "residence")
 
@@ -13,13 +16,13 @@ public class Residence {
     private long id;
 
     @Column(name = "first_name")
-    private String firstName;
+    private String firstName;  //deze verwijderen
 
     @Column(name = "last_name")
-    private String lastName;  //Hier zit je waarschijnlijk lastname vs lastName
+    private String lastName;  //Hier zit je waarschijnlijk lastname vs lastName //deze verwijderen
 
     @Column(name = "client_nr")
-    private String clientNr;
+    private String clientNr; //deze verwijderen
 
     //fotoColomn toevoegen
     @Column( length = 2000000)

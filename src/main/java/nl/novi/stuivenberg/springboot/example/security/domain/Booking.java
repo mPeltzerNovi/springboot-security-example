@@ -18,11 +18,11 @@ public class Booking {
     private String departure;  //Hier zit je waarschijnlijk lastname vs lastName
 
     @Column(name = "comment")
-    private String comment;
+    private String comment; //comment veranderen in request.
 
     //Toevoeging voor image
     @Column( length = 2000000)
-    private String baseImage;
+    private String baseImage; //BaseImage veranderen in passport
 
     //1maart -->fout
     //@OneToMany(fetch = FetchType.LAZY)

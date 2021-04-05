@@ -14,6 +14,8 @@ import java.util.List;
 
 public interface ResidenceRepository extends JpaRepository<Residence, Long> {
 
+    //Waarschijnlijk moet ik hier toch een "getAvatarImageFOrSite" oid maken.
+
     Residence findByLastNameIgnoreCase(String lastName);
     //Residence findByResidenceNr(long residenceNr);
     //Door R 17 liep het vast. Dit nu uit gecommentarieerd.
