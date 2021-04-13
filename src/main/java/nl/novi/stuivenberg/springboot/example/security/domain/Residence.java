@@ -98,5 +98,10 @@ public class Residence {
         this.clientNr = clientNr;
     }
 
+    //GetAvatarData toegevoegd 13apr21
+    public String getAvatarData() {
+        return this.getFirstName() + " " + this.getLastName() + " " + this.getClientNr() + " " + this.getAvatarImage();
+    }
+
 }
 

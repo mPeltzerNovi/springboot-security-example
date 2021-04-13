@@ -44,6 +44,11 @@ public class Booking {
         this.baseImage = baseImage;
     }
     //Einde dit is erbij gekomen
+    //Nog een bookingconstructor met alleen arrival en depature maken en testen
+    public Booking(String arrival, String departure) {
+        this.arrival = arrival;
+        this.departure = departure;
+    }
 
 
     public String getBaseImage() {
@@ -100,37 +105,14 @@ public class Booking {
         this.comment = comment;
     }
 
-
-
-    /*public long getId() {
-        return id;
+    //GetBooking toegevoegd 13apr21
+    public String getBooking() {
+        return this.getArrival() + " " + this.getDeparture() + " " + this.getComment() + " " + this.getBaseImage();
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public String getStay() {
+        return this.getArrival() + " " + this.getDeparture();
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getClientNr() {
-        return clientNr;
-    }
-
-    public void setClientNr(String clientNr) {
-        this.clientNr = clientNr;
-    }*/
 }

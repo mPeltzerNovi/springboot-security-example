@@ -60,6 +60,14 @@ public class User  {
         this.password = password;
     }
 
+    //Deze unit testen voor usenmame en email
+    public User(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+
+
     public long getId() {
         return id;
     }
@@ -98,5 +106,13 @@ public class User  {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    //Unit-tests
+    //GetBooking toegevoegd 13apr21
+
+
+    public String getUsernameAndAddress() {
+        return this.getUsername() + " " + this.getEmail();
     }
 }
