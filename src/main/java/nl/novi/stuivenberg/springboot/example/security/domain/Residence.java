@@ -29,9 +29,19 @@ public class Residence {
     private String avatarImage;
 
     //Die constructor is ook leeg; daar ook eens naar kijken voor renderen ed
-    public Residence() {
+    //Deze lege nu uitzetten 13 apr 21
+    /*public Residence() {
 
+    }*/
+
+    //Toevoegen om te testen op 13 april 21
+    public Residence(String firstName, String lastName, String clientNr, String avatarImage) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.clientNr = clientNr;
+        this.avatarImage = avatarImage;
     }
+
 
     //Relatie toevoegen met User (FrankFilm3 rond 01:09:01)
     @ManyToOne(fetch = FetchType.LAZY)

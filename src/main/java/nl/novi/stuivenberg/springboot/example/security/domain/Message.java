@@ -27,6 +27,7 @@ public class Message {
     public Message() {
 
     }
+    //idem hier zie booking en user , maken en dan testen???
 
     //Kijk; er is ook geen code voor "getContestImage" maar wel voor getUser!!!!
     public String getContestImage() {

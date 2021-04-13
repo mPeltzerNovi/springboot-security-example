@@ -53,6 +53,7 @@ public class User  {
 
     }
 
+    //Deze kan je dan unittesten zoals Peter met String in Film
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;

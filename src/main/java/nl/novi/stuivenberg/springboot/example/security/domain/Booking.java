@@ -30,17 +30,19 @@ public class Booking {
 
     //getters en setters erbij!
 
-    public Booking(){
+    //Deze nu even uitgezet
+    /*public Booking(){
 
-    }
+    }*/
 
-    //Dit is er bij gekomen
-    /*public Booking(String arrival, String departure, String comment, String baseImage) {
+    //Kijken of je die lege kan vervangen door deze hieronde en die dan testen
+    //Dit is er bij gekomen constructor om te testen 13 april 21
+    public Booking(String arrival, String departure, String comment, String baseImage) {
         this.arrival = arrival;
         this.departure = departure;
         this.comment = comment;
         this.baseImage = baseImage;
-    }*/
+    }
     //Einde dit is erbij gekomen
 
 
@@ -97,6 +99,8 @@ public class Booking {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+
 
     /*public long getId() {
         return id;
