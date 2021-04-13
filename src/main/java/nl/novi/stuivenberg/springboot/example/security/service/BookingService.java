@@ -20,5 +20,6 @@ public interface BookingService {
     void updateBooking(long id, Booking booking); //die dan implementeren in ClientServiceImpl
     //Extra dingen
 
+    //Deze stond er al en gaan we bij het mocken gebruiken.
     Booking getBookingByArrival(String arrival);
 }

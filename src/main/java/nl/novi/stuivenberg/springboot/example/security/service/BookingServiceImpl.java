@@ -14,10 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-
-
-
-
 @Service
 public class BookingServiceImpl implements BookingService {
 
@@ -107,4 +103,14 @@ public class BookingServiceImpl implements BookingService {
             return booking;
         }
     }
+
+    //In feite stond het er dus al op een andere manier
+    //Dit toevoegen voor mock test
+    //R88 lijkt al een uitgebreideren variant van hetzelfe te staan
+    /*@Override
+    public Booking getBookingByArrival(String arrival) {
+        return bookingRepository.findByArrivalIgnoreCase(arrival);
+    }*/
+
+
 }
