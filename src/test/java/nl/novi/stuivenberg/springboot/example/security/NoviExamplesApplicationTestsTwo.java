@@ -1,9 +1,9 @@
 package nl.novi.stuivenberg.springboot.example.security;
 
 
-import nl.novi.stuivenberg.springboot.example.security.domain.Residence;
-import nl.novi.stuivenberg.springboot.example.security.repository.ResidenceRepository;
-import nl.novi.stuivenberg.springboot.example.security.service.ResidenceService;
+import nl.novi.stuivenberg.springboot.example.security.domain.Avatar;
+import nl.novi.stuivenberg.springboot.example.security.repository.AvatarRepository;
+import nl.novi.stuivenberg.springboot.example.security.service.AvatarService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -20,13 +20,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class NoviExamplesApplicationTestsTwo {
 
     @Autowired
-    private ResidenceService residenceService;
+    private AvatarService avatarService;
 
     @MockBean
-    private ResidenceRepository residenceRepository;
+    private AvatarRepository avatarRepository;
 
     @Mock
-    Residence residence;
+    Avatar avatar;
 
     @BeforeEach
     public void setUp() {
@@ -37,17 +37,17 @@ public class NoviExamplesApplicationTestsTwo {
     //testGetAvatarData gaan heten overal. En avatarImage dan geen "null" maar naam maken etc
     //Deze is dus voorlopig maar het blijkt dat de foto upload wel werkt.
     @Test
-    public void testGetResidenceByLastName() {
-        residence = new Residence("null", "null", "null", "null");
+    public void testGetAvatarByLastName() {
+        avatar = new Avatar("null", "null", "null", "null");
 
         Mockito
-                .when(residenceRepository.findByLastNameIgnoreCase(residence.getLastName()))
-                .thenReturn(residence);
+                .when(avatarRepository.findByLastNameIgnoreCase(avatar.getLastName()))
+                .thenReturn(avatar);
 
         String lastname = "null";
         String expected = "null null null null";
 
-        Residence found = residenceService.getResidenceByLastName(lastname);
+        Avatar found = avatarService.getAvatarByLastName(lastname);
 
         assertEquals(expected, found.getAvatarData());
     }

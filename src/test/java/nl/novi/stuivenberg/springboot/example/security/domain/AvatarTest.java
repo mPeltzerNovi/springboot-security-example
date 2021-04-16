@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ResidenceTest {
+public class AvatarTest {
 
-    private Residence residence;
+    private Avatar avatar;
 
     @BeforeEach
     void setUp() {
-        this.residence = new Residence("null", "null", "null", "null");
+        this.avatar = new Avatar("null", "null", "null", "null");
     }
 
     @Test
     void testGetAvatarData() {
         String expectedAvatarData = "null null null null";
-        String actualAvatarData = this.residence.getAvatarData();
+        String actualAvatarData = this.avatar.getAvatarData();
         assertEquals(expectedAvatarData, actualAvatarData);
     }
 }

@@ -7,22 +7,22 @@ import java.util.List; //-->Ongebruikt in Booking
 //Deze veranderen naar AvatarUpload en kolommen verwijderen!!!
 
 @Entity
-@Table(name = "residence")
+@Table(name = "avatar")
 
-public class Residence {
+public class Avatar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "first_name")
-    private String firstName;  //deze verwijderen
+    @Column(name = "future_one")
+    private String futureOne;  //deze verwijderen
 
     @Column(name = "last_name")
     private String lastName;  //Hier zit je waarschijnlijk lastname vs lastName //deze verwijderen
 
-    @Column(name = "client_nr")
-    private String clientNr; //deze verwijderen
+    @Column(name = "future_Two")
+    private String futureTwo; //deze verwijderen
 
     //fotoColomn toevoegen
     @Column( length = 2000000)
@@ -30,15 +30,15 @@ public class Residence {
 
     //Die constructor is ook leeg; daar ook eens naar kijken voor renderen ed
     //Deze lege nu uitzetten 13 apr 21
-    /*public Residence() {
+    public Avatar() {
 
-    }*/
+    }
 
     //Toevoegen om te testen op 13 april 21
-    public Residence(String firstName, String lastName, String clientNr, String avatarImage) {
-        this.firstName = firstName;
+    public Avatar(String futureOne, String lastName, String futureTwo, String avatarImage) {
+        this.futureOne = futureOne;
         this.lastName = lastName;
-        this.clientNr = clientNr;
+        this.futureTwo = futureTwo;
         this.avatarImage = avatarImage;
     }
 
@@ -74,12 +74,12 @@ public class Residence {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFutureOne() {
+        return futureOne;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFutureOne(String futureTwo) {
+        this.futureOne = futureOne;
     }
 
     public String getLastName() {
@@ -90,17 +90,17 @@ public class Residence {
         this.lastName = lastName;
     }
 
-    public String getClientNr() {
-        return clientNr;
+    public String getFutureTwo() {
+        return futureTwo;
     }
 
-    public void setClientNr(String clientNr) {
-        this.clientNr = clientNr;
+    public void setFutureTwo(String futureTwo) {
+        this.futureTwo = futureTwo;
     }
 
     //GetAvatarData toegevoegd 13apr21
     public String getAvatarData() {
-        return this.getFirstName() + " " + this.getLastName() + " " + this.getClientNr() + " " + this.getAvatarImage();
+        return this.getFutureOne() + " " + this.getLastName() + " " + this.getFutureTwo() + " " + this.getAvatarImage();
     }
 
 }

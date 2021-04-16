@@ -34,7 +34,9 @@ public class Booking {
     /*public Booking(){
 
     }*/
+    public Booking(){
 
+    }
     //Kijken of je die lege kan vervangen door deze hieronde en die dan testen
     //Dit is er bij gekomen constructor om te testen 13 april 21
     public Booking(String arrival, String departure, String comment, String baseImage) {

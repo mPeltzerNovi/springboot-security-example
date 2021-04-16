@@ -62,11 +62,11 @@ public class NoviExamplesApplicationTests {
 		// Execute the service call
 		Booking found = bookingService.getBookingByArrival(arrival);
 
-		//Assert the response
+		// Assert the response
 		assertNull(found, "Widget should not be found");
 	}
 
-	//Tweede toevoegen
+
 
 	/*@Test
 	void contextLoads() {

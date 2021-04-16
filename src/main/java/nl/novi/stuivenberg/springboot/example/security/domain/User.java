@@ -1,7 +1,6 @@
 package nl.novi.stuivenberg.springboot.example.security.domain;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.List;
@@ -39,14 +38,15 @@ public class User  {
     private List<Booking> booking;
 
     //Verhaal voor de message
-    @OneToMany(fetch = FetchType.LAZY)
+    /*@OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "message_id")
-    private List<Message> message;
+    private List<Message> message;*/
 
     //Verhaal voor de residence toegevoegd (9maart21)
+    //@joinColumn "residence_id" naar "avatar_id"
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "residence_id")
-    private List<Residence> residence;
+    @JoinColumn(name = "avatar_id")
+    private List<Avatar> residence;
 
     public User() {
 
