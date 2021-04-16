@@ -1,10 +1,8 @@
 package nl.novi.stuivenberg.springboot.example.security.domain;
 
 import javax.persistence.*;
-import java.util.List; //-->Ongebruikt in Booking
+import java.util.List;
 
-
-//Deze veranderen naar AvatarUpload en kolommen verwijderen!!!
 
 @Entity
 @Table(name = "avatar")
@@ -15,26 +13,26 @@ public class Avatar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    //For later additions to the table
     @Column(name = "future_one")
-    private String futureOne;  //deze verwijderen
+    private String futureOne;
 
     @Column(name = "last_name")
-    private String lastName;  //Hier zit je waarschijnlijk lastname vs lastName //deze verwijderen
+    private String lastName;
 
+    //For later  to the table
     @Column(name = "future_Two")
-    private String futureTwo; //deze verwijderen
+    private String futureTwo;
 
-    //fotoColomn toevoegen
+    //Avatar upload
     @Column( length = 2000000)
     private String avatarImage;
 
-    //Die constructor is ook leeg; daar ook eens naar kijken voor renderen ed
-    //Deze lege nu uitzetten 13 apr 21
+    //Constructors
     public Avatar() {
 
     }
 
-    //Toevoegen om te testen op 13 april 21
     public Avatar(String futureOne, String lastName, String futureTwo, String avatarImage) {
         this.futureOne = futureOne;
         this.lastName = lastName;
@@ -42,12 +40,11 @@ public class Avatar {
         this.avatarImage = avatarImage;
     }
 
-
-    //Relatie toevoegen met User (FrankFilm3 rond 01:09:01)
+    //Relationship
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    //Nu de getters en setters toevoegen voor de "user" en "avatarImage"
+    //Getters & Setters
 
 
     public String getAvatarImage() {
@@ -98,7 +95,7 @@ public class Avatar {
         this.futureTwo = futureTwo;
     }
 
-    //GetAvatarData toegevoegd 13apr21
+    //Methodes
     public String getAvatarData() {
         return this.getFutureOne() + " " + this.getLastName() + " " + this.getFutureTwo() + " " + this.getAvatarImage();
     }

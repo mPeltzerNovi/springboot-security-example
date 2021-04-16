@@ -1,18 +1,14 @@
 package nl.novi.stuivenberg.springboot.example.security.service;
 
-//Specifieke imports
 import nl.novi.stuivenberg.springboot.example.security.exception.DatabaseErrorException;
 import nl.novi.stuivenberg.springboot.example.security.exception.RecordNotFoundException;
 import nl.novi.stuivenberg.springboot.example.security.domain.Avatar;
 import nl.novi.stuivenberg.springboot.example.security.repository.AvatarRepository;
 
-//nog 3 generieke imports
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-//Meer Nick imports
 
 
 @Service
@@ -38,14 +34,13 @@ public class AvatarServiceImpl implements AvatarService {
     }
 
     @Override
-    public void deleteAvatar(long id) { //deleteClient gaat dus praten met de clientRepository
-        //Aanpassen-->Exception foutmelding invoeren:
+    public void deleteAvatar(long id) {
         if (avatarRepository.existsById(id)) {
             avatarRepository.deleteById(id);
         }
         else {
             throw new RecordNotFoundException();
-            //RuntimeException naar RecordNotFoundException na aanmaken exception map met inhoud!
+
         }
 
     }
@@ -72,8 +67,7 @@ public class AvatarServiceImpl implements AvatarService {
             catch (Exception ex) {
                 throw new DatabaseErrorException();
             }
-            //Hier zie je nu hij kan twee verschillende foutcodes teruggeven
-            //afhankelijk van wat er gebeurd is!!!
+            //Evt nog foutcode toevoegen
 
         }
         else {
@@ -82,7 +76,7 @@ public class AvatarServiceImpl implements AvatarService {
 
     }
 
-    //Nu met try catch blok een exception maken.Er onder als 2 de eerdere manier
+
     @Override
     public Avatar getAvatarByLastName(String lastName) {
         try {
@@ -92,7 +86,6 @@ public class AvatarServiceImpl implements AvatarService {
         }
     }
 
-    //Eerdere manier voor fout afvangen:
     public Avatar getAvatarByLastName2(String lastName) {
         Avatar avatar = avatarRepository.findByLastNameIgnoreCase(lastName);
         if(avatar == null) {

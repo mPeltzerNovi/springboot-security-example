@@ -37,6 +37,7 @@ public class NoviExamplesApplicationTests {
 	public void testGetBookingByArrival() {
 		booking = new Booking("31okt", "2nov", "lang weekend", "null");
 
+		// Setup our mock repository
 		Mockito
 				.when(bookingRepository.findByArrivalIgnoreCase(booking.getArrival()))
 				.thenReturn(booking);
@@ -44,8 +45,10 @@ public class NoviExamplesApplicationTests {
 		String arrival = "31okt";
 		String expected = "31okt 2nov lang weekend null";
 
+		// Execute the service call
 		Booking found = bookingService.getBookingByArrival(arrival);
 
+		// Assert the response
 		assertEquals(expected, found.getBooking());
 	}
 
@@ -65,11 +68,5 @@ public class NoviExamplesApplicationTests {
 		// Assert the response
 		assertNull(found, "Widget should not be found");
 	}
-
-
-
-	/*@Test
-	void contextLoads() {
-	}*/
 
 }

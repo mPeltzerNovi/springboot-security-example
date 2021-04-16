@@ -33,27 +33,23 @@ public class NoviExamplesApplicationTestsTwo {
 
     }
 
-    //Hier nog eea veranderen het gaat om de avatarFoto dus het moet ook
-    //testGetAvatarData gaan heten overal. En avatarImage dan geen "null" maar naam maken etc
-    //Deze is dus voorlopig maar het blijkt dat de foto upload wel werkt.
     @Test
     public void testGetAvatarByLastName() {
         avatar = new Avatar("null", "null", "null", "null");
 
+        // Setup our mock repository
         Mockito
                 .when(avatarRepository.findByLastNameIgnoreCase(avatar.getLastName()))
                 .thenReturn(avatar);
 
+        // Execute the service call
         String lastname = "null";
         String expected = "null null null null";
 
         Avatar found = avatarService.getAvatarByLastName(lastname);
 
+        // Assert the respone
         assertEquals(expected, found.getAvatarData());
     }
-
-	/*@Test
-	void contextLoads() {
-	}*/
 
 }

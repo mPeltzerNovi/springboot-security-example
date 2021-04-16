@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
-//@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("/api/test")
 public class TestController {
@@ -30,11 +30,6 @@ public class TestController {
     public String userAccess() {
         return testService.generateUserContent();
     }
-
-    //@GetMapping("/mod")
-    //public String moderatorAccess() {
-    //    return testService.generateModContent();
-    //}
 
     @GetMapping("/admin")
     public String adminAccess() {

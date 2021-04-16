@@ -10,17 +10,10 @@ public class TestService {
         return "Public Content.";
     }
 
-    //@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    //Moderator weggehaald in fase 2
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public String generateUserContent() {
         return "User Content.";
     }
-
-    //@PreAuthorize("hasRole('MODERATOR')")
-    //public String generateModContent() {
-    //    return "Moderator Board.";
-    //}
 
     @PreAuthorize("hasRole('ADMIN')")
     public String generateAdminContent() {

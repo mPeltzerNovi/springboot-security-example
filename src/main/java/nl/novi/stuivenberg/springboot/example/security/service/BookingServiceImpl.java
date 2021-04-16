@@ -1,12 +1,9 @@
 package nl.novi.stuivenberg.springboot.example.security.service;
 
-//Specifieke imports
-
 import nl.novi.stuivenberg.springboot.example.security.exception.DatabaseErrorException;
 import nl.novi.stuivenberg.springboot.example.security.exception.RecordNotFoundException;
 import nl.novi.stuivenberg.springboot.example.security.domain.Booking;
 import nl.novi.stuivenberg.springboot.example.security.repository.BookingRepository;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,14 +36,13 @@ public class BookingServiceImpl implements BookingService {
 
 
     @Override
-    public void deleteBooking(long id) { //deleteClient gaat dus praten met de clientRepository
-        //Aanpassen-->Exception foutmelding invoeren:
+    public void deleteBooking(long id) {
         if (bookingRepository.existsById(id)) {
             bookingRepository.deleteById(id);
         }
         else {
             throw new RecordNotFoundException();
-            //RuntimeException naar RecordNotFoundException na aanmaken exception map met inhoud!
+            //evt nog recordNotFoundException toevoegen
         }
 
     }
@@ -61,20 +57,17 @@ public class BookingServiceImpl implements BookingService {
     public void updateBooking(long id, Booking booking) {
         if(bookingRepository.existsById(id)) {
             try {
-                //het id moet worden opgehaald
+
                 Booking existingBooking = bookingRepository.findById(id).orElse(null);
                 existingBooking.setArrival(booking.getArrival());
                 existingBooking.setDeparture(booking.getDeparture());
                 existingBooking.setComment(booking.getComment());
-                //voor baseImage
                 existingBooking.setBaseImage(booking.getBaseImage());
                 bookingRepository.save(existingBooking);
             }
             catch (Exception ex) {
                 throw new DatabaseErrorException();
             }
-            //Hier zie je nu hij kan twee verschillende foutcodes teruggeven
-            //afhankelijk van wat er gebeurd is!!!
 
         }
         else {
@@ -83,7 +76,6 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-    //Nu met try catch blok een exception maken.Er onder als 2 de eerdere manier
     @Override
     public Booking getBookingByArrival(String arrival) {
         try {
@@ -93,7 +85,6 @@ public class BookingServiceImpl implements BookingService {
         }
     }
 
-    //Eerdere manier voor fout afvangen:
     public Booking getBookingByArrival2(String arrival) {
         Booking booking = bookingRepository.findByArrivalIgnoreCase(arrival);
         if(booking == null) {
@@ -103,14 +94,5 @@ public class BookingServiceImpl implements BookingService {
             return booking;
         }
     }
-
-    //In feite stond het er dus al op een andere manier
-    //Dit toevoegen voor mock test
-    //R88 lijkt al een uitgebreideren variant van hetzelfe te staan
-    /*@Override
-    public Booking getBookingByArrival(String arrival) {
-        return bookingRepository.findByArrivalIgnoreCase(arrival);
-    }*/
-
 
 }

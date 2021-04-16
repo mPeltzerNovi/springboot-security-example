@@ -1,8 +1,5 @@
 package nl.novi.stuivenberg.springboot.example.security.controller;
 
-
-
-//Gespecificeerde imports
 import nl.novi.stuivenberg.springboot.example.security.domain.Booking;
 import nl.novi.stuivenberg.springboot.example.security.domain.User;
 import nl.novi.stuivenberg.springboot.example.security.repository.UserRepository;
@@ -21,14 +18,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 @CrossOrigin(origins = "*", maxAge = 3600)
-//@CrossOrigin(origins = "http://localhost:3000")
-//Bovenstaand kan je waarschijnlijk terugveranderen in dat sterretje verhaal.
-//@RestController toegevoegd
+
 @RestController
 public class BookingController {
+
     @Autowired
     private BookingService bookingService;
 
+    //@Autowired voor User
     @Autowired
     UserRepository userRepository;
 
@@ -38,7 +35,6 @@ public class BookingController {
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
-    //Deze lijkt niet in de uitwerking te staan, wellicht later aangepast-->Deze is omvangrijker 01:10:27 (les 4)
     @GetMapping(value = "/bookings/{id}")
     public ResponseEntity<Object> getBookings(@PathVariable("id") long id) {
         Booking booking = bookingService.getBookingById(id);
@@ -48,10 +44,11 @@ public class BookingController {
     @DeleteMapping(value = "/bookings/{id}")
     public ResponseEntity<Object> deleteBooking(@PathVariable("id") long id) {
         bookingService.deleteBooking(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT); //dit is de foutcode die hij geeft als het niet lukt
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
-    //Hier is nieuwe code toegevoegd met hulp van Frank 18 feb 20!!!!!
+
+    //Gebruik User en Booking
     @PostMapping(value = "/bookings")
     public ResponseEntity<Object> saveBooking(@RequestBody Booking booking, @AuthenticationPrincipal Authentication authentication) {
 
@@ -66,7 +63,7 @@ public class BookingController {
 
     @PutMapping(value = "/bookings/{id}")
     public ResponseEntity<Object> updateBooking(@PathVariable("id") int id, @RequestBody Booking booking) {
-        bookingService.updateBooking(id, booking); //clientUpdate bestaat dan nog niet-->In de clientService gaan maken
+        bookingService.updateBooking(id, booking);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

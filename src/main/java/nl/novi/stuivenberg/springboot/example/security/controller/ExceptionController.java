@@ -1,10 +1,8 @@
 package nl.novi.stuivenberg.springboot.example.security.controller;
 
-//op maat gemaakte imports
 import nl.novi.stuivenberg.springboot.example.security.exception.DatabaseErrorException;
 import nl.novi.stuivenberg.springboot.example.security.exception.RecordNotFoundException;
 
-//standaard imports
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
-//@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @ControllerAdvice
 public class ExceptionController {
