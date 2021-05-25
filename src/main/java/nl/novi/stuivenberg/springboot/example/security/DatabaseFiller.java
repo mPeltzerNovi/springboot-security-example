@@ -35,10 +35,11 @@ public class DatabaseFiller implements CommandLineRunner {
         Set<String> rollen = new HashSet<>();
         rollen.add("admin");
 
+        //Terug naar "nick" nav de installatiehandleiding
         SignupRequest admin = new SignupRequest();
-        admin.setUsername("judith");
-        admin.setEmail("judith@admin.nl");
-        admin.setPassword("groeneoorbellen");
+        admin.setUsername("nick");
+        admin.setEmail("nick@admin.nl");
+        admin.setPassword("nicknick");
         admin.setRole(rollen);
         authorizationService.registerUser(admin);
 
